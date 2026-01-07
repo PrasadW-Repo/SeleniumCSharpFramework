@@ -1,0 +1,156 @@
+﻿using System;
+using System.IO;
+using System.Threading;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using NUnit.Framework;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Edge;
+using OpenQA.Selenium.Firefox;
+
+namespace SeleniumCSharpProject.utilities
+{
+    public class Base
+    {
+        // Thread-local storage for IWebDriver per test thread
+        public static ThreadLocal<IWebDriver> tdriver = new ThreadLocal<IWebDriver>();
+
+        // Protected property named `driver` so existing tests (e.g. Test1) that reference `driver` keep working.
+        // Accessors include exception handling to produce clearer errors when the WebDriver isn't available.
+        protected IWebDriver driver
+        {
+            get
+            {
+                try
+                {
+                    var d = tdriver.Value;
+                    if (d == null)
+                        throw new InvalidOperationException("WebDriver instance is not initialized for the current thread. Ensure StartBrowser() ran or call SetConfig()/StartBrowser() before using the driver.");
+                    return d;
+                }
+                catch (Exception ex)
+                {
+                    throw new InvalidOperationException("Failed to retrieve the WebDriver instance for the current thread.", ex);
+                }
+            }
+            set
+            {
+                try
+                {
+                    tdriver.Value = value;
+                }
+                catch (Exception ex)
+                {
+                    throw new InvalidOperationException("Failed to assign the WebDriver instance for the current thread.", ex);
+                }
+            }
+        }
+
+        // Backing fields for lazy-loaded configs
+        private static TestConfig? _systemConfig;
+        private static BaseConfig? _config;
+
+        // Expose configs via properties that ensure loading on first access
+        public static TestConfig SystemConfig
+        {
+            get
+            {
+                EnsureConfigLoaded();
+                return _systemConfig!;
+            }
+            private set => _systemConfig = value;
+        }
+
+        public static BaseConfig Config
+        {
+            get
+            {
+                EnsureConfigLoaded();
+                return _config!;
+            }
+            private set => _config = value;
+        }
+
+        // WorkDirectory as a static helper so SetConfig can run from static contexts
+        public static string WorkDirectory => Directory.GetCurrentDirectory().Replace("\\bin\\Debug\\net10.0", "");
+
+        [SetUp]
+        public void StartBrowser()
+        {
+            // Ensure configuration is present before starting the browser
+            EnsureConfigLoaded();
+
+            string borwserName = Config?.browser ?? "chrome";
+            try
+            {
+                switch (borwserName.ToLowerInvariant())
+                {
+                    case "chrome":
+                    default:
+                        this.driver = new ChromeDriver();
+                        break;
+                    case "firefox":
+                        this.driver = new FirefoxDriver();
+                        break;
+                    case "edge":
+                        this.driver = new EdgeDriver();
+                        break;
+                }
+
+                // If driver creation succeeded, do basic setup
+                this.driver.Manage().Window.Maximize();
+                this.driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
+            }
+            catch (Exception ex)
+            {
+                // Clean up partially created driver if possible, and throw a clear error
+                try
+                {
+                    tdriver.Value?.Quit();
+                }
+                catch { /* ignore cleanup errors */ }
+
+                tdriver.Value = null;
+                throw new InvalidOperationException("Failed to start WebDriver. See inner exception for details.", ex);
+            }
+        }
+
+        // Public so tests running in discovery (static providers) can call it explicitly if needed
+        public static void SetConfig()
+        {
+            // Load appsettings.json
+            var appPath = Path.Combine(WorkDirectory, "appsettings.json");
+            if (!File.Exists(appPath)) throw new FileNotFoundException($"Configuration file not found: {appPath}");
+
+            // Utils.ReadJSON may return a JObject/JToken at runtime; fall back to parsing text if needed
+            var appToken = Utils.ReadJSON(appPath) as JToken ?? JToken.Parse(File.ReadAllText(appPath));
+            _systemConfig = appToken.ToObject<TestConfig>() ?? throw new InvalidOperationException("Failed to deserialize appsettings.json to TestConfig");
+
+            // Choose test data file based on env
+            string dataFile = string.Equals(_systemConfig.env, "prod", StringComparison.OrdinalIgnoreCase)
+                ? "TestDataPROD.json"
+                : "TestDataINTG.json";
+
+            var dataPath = Path.Combine(WorkDirectory, dataFile);
+            if (!File.Exists(dataPath)) throw new FileNotFoundException($"Test data file not found: {dataPath}");
+
+            var dataToken = Utils.ReadJSON(dataPath) as JToken ?? JToken.Parse(File.ReadAllText(dataPath));
+            _config = dataToken.ToObject<BaseConfig>() ?? throw new InvalidOperationException($"Failed to deserialize {dataFile} to BaseConfig");
+        }
+
+        private static void EnsureConfigLoaded()
+        {
+            if (_systemConfig != null && _config != null) return;
+
+            try
+            {
+                SetConfig();
+            }
+            catch (Exception ex)
+            {
+                throw new InvalidOperationException("Failed to load configuration. Verify appsettings.json and test data files.", ex);
+            }
+        }
+    }
+}

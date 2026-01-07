@@ -1,0 +1,109 @@
+﻿using System;
+using Microsoft.Extensions.Configuration;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using NUnit.Framework;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Edge;
+using OpenQA.Selenium.Firefox;
+using WebDriverManager.DriverConfigs.Impl;
+
+
+namespace SeleniumCSharpProject.utilities
+{
+    public class Base
+    {
+        public IWebDriver driver; 
+        public TestConfig SystemConfig;
+        public BaseConfig Config;
+        public string WorkDirectory = Directory.GetCurrentDirectory().Replace("\\bin\\Debug\\net10.0","");
+
+        [SetUp]
+        public void StartBrowser()
+        {
+            SetConfig();
+            string borwserName =  Config.browser;
+            switch (borwserName)
+            {
+                case ("chrome"):
+                default:
+                    //no longer needed - new WebDriverManager.DriverManager().SetUpDriver(new ChromeConfig());
+                    driver = new ChromeDriver();
+                    break;
+                case ("firefox"):
+                    driver = new FirefoxDriver();
+                    break;
+                case ("edge"):
+                    driver = new EdgeDriver();
+                    break;                
+
+            }
+
+            driver.Manage().Window.Maximize();
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);       
+
+        }
+
+        public void SetConfig()
+        {
+            // Read appsettings.json and ensure it deserializes to an object
+            var sysParsed = Utils.ReadJSON("appsettings.json");
+            if (sysParsed is JObject sysObj)
+            {
+                SystemConfig = sysObj.ToObject<TestConfig>();
+            }
+            else
+            {
+                throw new InvalidOperationException("appsettings.json did not deserialize to a JSON object.");
+            }
+
+            if (SystemConfig == null)
+            {
+                throw new InvalidOperationException("Failed to deserialize appsettings.json to TestConfig.");
+            }
+
+            // Determine which test data file to use
+            string dataFile;
+            if (SystemConfig.env == "qa")
+            {
+                dataFile = "TestDataINTG.json";
+            }
+            else if (SystemConfig.env == "prod")
+            {
+                dataFile = "TestDataPROD.json";
+            }
+            else
+            {
+                dataFile = "TestDataINTG.json";
+            }
+
+            // Read the selected test data file. It may be a single object or an array of objects.
+            var dataParsed = Utils.ReadJSON(dataFile);
+            if (dataParsed is JArray arr)
+            {
+                if (arr.Count == 0)
+                {
+                    throw new InvalidOperationException($"{dataFile} contained an empty array.");
+                }
+
+                // Use the first element of the array as the BaseConfig
+                Config = arr[0].ToObject<BaseConfig>();
+            }
+            else if (dataParsed is JObject dataObj)
+            {
+                Config = dataObj.ToObject<BaseConfig>();
+            }
+            else
+            {
+                throw new InvalidOperationException($"{dataFile} did not deserialize to a JSON object or array.");
+            }
+
+            if (Config == null)
+            {
+                throw new InvalidOperationException($"Failed to deserialize {dataFile} to BaseConfig.");
+            }
+        }
+
+    }
+}

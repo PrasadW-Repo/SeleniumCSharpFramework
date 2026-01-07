@@ -1,0 +1,68 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+
+namespace SeleniumCSharpProject.utilities
+{
+    [JsonConverter(typeof(BaseConfigJsonConverter))]
+    public class BaseConfig
+    {
+        public string browser { get; set; }
+        public string url { get; set; }
+    }
+
+    public class BaseConfigJsonConverter : JsonConverter<BaseConfig>
+    {
+        public override BaseConfig ReadJson(JsonReader reader, Type objectType, BaseConfig existingValue, bool hasExistingValue, JsonSerializer serializer)
+        {
+            // Load the JSON token from the reader
+            var token = JToken.Load(reader);
+
+            JObject obj = null;
+
+            if (token.Type == JTokenType.Array)
+            {
+                var arr = (JArray)token;
+                if (arr.Count == 0)
+                    throw new JsonSerializationException("Cannot deserialize empty array to BaseConfig.");
+
+                // Take the first element
+                if (arr[0].Type != JTokenType.Object)
+                    throw new JsonSerializationException("Expected array elements to be JSON objects for BaseConfig.");
+
+                obj = (JObject)arr[0];
+            }
+            else if (token.Type == JTokenType.Object)
+            {
+                obj = (JObject)token;
+            }
+            else
+            {
+                throw new JsonSerializationException("Unexpected token when deserializing BaseConfig. Expected object or array.");
+            }
+
+            // Manual mapping to avoid recursive converter calls
+            var config = new BaseConfig
+            {
+                browser = obj["browser"]?.ToString(),
+                url = obj["url"]?.ToString()
+            };
+
+            return config;
+        }
+
+        public override void WriteJson(JsonWriter writer, BaseConfig value, JsonSerializer serializer)
+        {
+            // Default serialization as object
+            var obj = new JObject
+            {
+                ["browser"] = value?.browser,
+                ["url"] = value?.url
+            };
+
+            obj.WriteTo(writer);
+        }
+    }
+}

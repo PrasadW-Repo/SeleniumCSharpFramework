@@ -1,0 +1,21 @@
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System;
+using System.Collections.Generic;
+using System.Runtime.InteropServices.JavaScript;
+using System.Text;
+using System.Text.Json.Nodes;
+
+namespace SeleniumCSharpProject.utilities
+{
+    public class Utils
+
+    {
+        public static JObject ReadJSON(String fileName)
+        {
+            var json = File.ReadAllText(fileName);
+            JObject obj = (JObject)JsonConvert.DeserializeObject(json);
+            return obj;
+        }
+    }
+}

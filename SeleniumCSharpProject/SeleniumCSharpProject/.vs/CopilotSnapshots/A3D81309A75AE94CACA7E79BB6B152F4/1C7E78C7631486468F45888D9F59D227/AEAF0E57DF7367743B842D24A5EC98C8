@@ -1,0 +1,55 @@
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Runtime.InteropServices.JavaScript;
+using System.Text;
+using System.Text.Json.Nodes;
+
+namespace SeleniumCSharpProject.utilities
+{
+    public class Utils
+
+    {
+        /// <summary>
+        /// Reads a JSON file from disk and returns it as a <see cref="JObject"/>.
+        /// Uses <see cref="JsonConvert.DeserializeObject(string)"/> and validates the result is a JObject.
+        /// Throws an <see cref="InvalidOperationException"/> with context if reading or parsing fails.
+        /// </summary>
+        /// <param name="fileName">Path to the JSON file.</param>
+        /// <returns>Deserialized JSON as <see cref="JObject"/>.</returns>
+        public static JObject ReadJSON(String fileName)
+        {
+            try
+            {
+                // Read the file contents
+                var json = File.ReadAllText(fileName);
+
+                // Deserialize using JsonConvert (non-generic) as requested
+                JObject obj = JsonConvert.DeserializeObject(json) as JObject;
+
+                if (obj == null)
+                {
+                    throw new InvalidOperationException($"The JSON in '{fileName}' did not deserialize to a JObject.");
+                }
+
+                return obj;
+            }
+            catch (Exception ex)
+            {
+                // Wrap and rethrow with additional context to make failures easier to diagnose.
+                throw new InvalidOperationException($"Failed to read or parse JSON file '{fileName}'.", ex);
+            }
+        }
+
+        public static void WaitForElementToAppear(By element, int time)
+        {
+            // Placeholder - implementation requires an IWebDriver reference to create a WebDriverWait.
+            // Keep as a stub to be implemented from caller context where driver is available.
+        }
+
+    }
+}

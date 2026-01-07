@@ -1,0 +1,54 @@
+﻿using AngleSharp.Browser.Dom;
+using Microsoft.Testing.Platform.Configurations;
+using NUnit.Framework;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Edge;
+using OpenQA.Selenium.Firefox;
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Text;
+using WebDriverManager.DriverConfigs.Impl;
+using Microsoft.Extensions.Configuration;
+using System.IO;
+
+namespace SeleniumCSharpProject.utilities
+{
+    public class Base
+    {
+        public IWebDriver driver;
+        [SetUp]
+        public void SetUp()
+        {
+            // Build configuration from appsettings.json (placed in output folder)
+            var builder = new ConfigurationBuilder();
+            var basePath = AppContext.BaseDirectory;
+            var jsonPath = Path.Combine(basePath, "appsettings.json");
+            builder.AddJsonFile(jsonPath, optional: true, reloadOnChange: true);
+            IConfiguration config = builder.Build();
+
+            string browserName = (config["Browser"] ?? "chrome").ToLower();
+
+            switch(browserName)
+            {
+                case "firefox":
+                    new WebDriverManager.DriverManager().SetUpDriver(new FirefoxConfig());
+                    driver = new FirefoxDriver();
+                    break;
+                case "edge":
+                    new WebDriverManager.DriverManager().SetUpDriver(new EdgeConfig());
+                    driver = new EdgeDriver();
+                    break;                
+                case "chrome":
+                default:
+                    new WebDriverManager.DriverManager().SetUpDriver(new ChromeConfig());
+                    driver = new ChromeDriver();
+                    break;
+
+            }
+            
+        }
+
+    }
+}

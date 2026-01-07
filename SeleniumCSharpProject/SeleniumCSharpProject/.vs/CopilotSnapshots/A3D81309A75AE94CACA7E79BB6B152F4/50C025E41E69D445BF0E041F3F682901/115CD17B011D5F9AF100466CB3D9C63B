@@ -1,0 +1,62 @@
+﻿using Microsoft.Extensions.Configuration;
+using Newtonsoft.Json;
+using NUnit.Framework;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Edge;
+using OpenQA.Selenium.Firefox;
+using WebDriverManager.DriverConfigs.Impl;
+
+
+namespace SeleniumCSharpProject.utilities
+{
+    public class Base
+    {
+        public static IWebDriver driver; 
+        public static TestConfig SystemConfig;
+        public  static BaseConfig Config; // Make Config nullable to resolve CS8618
+        public string WorkDirectory = Directory.GetCurrentDirectory().Replace("\\bin\\Debug\\net10.0","");
+
+       public Base()
+            { SetConfig(); }
+        [SetUp]
+        public void StartBrowser()
+        {
+            //SetConfig();
+            string borwserName =  Config?.browser ?? "chrome";
+            switch (borwserName)
+            {
+                case ("chrome"):
+                default:
+                    driver = new ChromeDriver();
+                    break;
+                case ("firefox"):
+                    driver = new FirefoxDriver();
+                    break;
+                case ("edge"):
+                    driver = new EdgeDriver();
+                    break;                
+            }
+
+            driver.Manage().Window.Maximize();
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);       
+        }
+
+        public static void SetConfig()
+        {
+            SystemConfig = Utils.ReadJSON("appsettings.json").ToObject<TestConfig>();
+            if (SystemConfig.env == "qa")
+            {
+                    Config = Utils.ReadJSON("TestDataINTG.json").ToObject<BaseConfig>();
+            }
+            else if  (SystemConfig.env == "prod")
+            {
+                Config = Utils.ReadJSON("TestDataPROD.json").ToObject<BaseConfig>();
+            }
+            else
+            {
+                Config = Utils.ReadJSON("TestDataINTG.json").ToObject<BaseConfig>();
+            }
+        }
+    }
+}

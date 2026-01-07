@@ -1,0 +1,204 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Projects\\SeleniumCSharp\\SeleniumCSharpProject\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E518340A-0115-3AA5-FA83-40C802C9BA83}|SeleniumCSharpProject\\SeleniumCSharpProject.csproj|d:\\projects\\seleniumcsharp\\seleniumcsharpproject\\seleniumcsharpproject\\nunittestitem1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E518340A-0115-3AA5-FA83-40C802C9BA83}|SeleniumCSharpProject\\SeleniumCSharpProject.csproj|solutionrelative:seleniumcsharpproject\\nunittestitem1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E518340A-0115-3AA5-FA83-40C802C9BA83}|SeleniumCSharpProject\\SeleniumCSharpProject.csproj|d:\\projects\\seleniumcsharp\\seleniumcsharpproject\\seleniumcsharpproject\\utilities\\base.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E518340A-0115-3AA5-FA83-40C802C9BA83}|SeleniumCSharpProject\\SeleniumCSharpProject.csproj|solutionrelative:seleniumcsharpproject\\utilities\\base.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E518340A-0115-3AA5-FA83-40C802C9BA83}|SeleniumCSharpProject\\SeleniumCSharpProject.csproj|d:\\projects\\seleniumcsharp\\seleniumcsharpproject\\seleniumcsharpproject\\utilities\\utils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E518340A-0115-3AA5-FA83-40C802C9BA83}|SeleniumCSharpProject\\SeleniumCSharpProject.csproj|solutionrelative:seleniumcsharpproject\\utilities\\utils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E518340A-0115-3AA5-FA83-40C802C9BA83}|SeleniumCSharpProject\\SeleniumCSharpProject.csproj|d:\\projects\\seleniumcsharp\\seleniumcsharpproject\\seleniumcsharpproject\\utilities\\testconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E518340A-0115-3AA5-FA83-40C802C9BA83}|SeleniumCSharpProject\\SeleniumCSharpProject.csproj|solutionrelative:seleniumcsharpproject\\utilities\\testconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E518340A-0115-3AA5-FA83-40C802C9BA83}|SeleniumCSharpProject\\SeleniumCSharpProject.csproj|d:\\projects\\seleniumcsharp\\seleniumcsharpproject\\seleniumcsharpproject\\test1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E518340A-0115-3AA5-FA83-40C802C9BA83}|SeleniumCSharpProject\\SeleniumCSharpProject.csproj|solutionrelative:seleniumcsharpproject\\test1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E518340A-0115-3AA5-FA83-40C802C9BA83}|SeleniumCSharpProject\\SeleniumCSharpProject.csproj|d:\\projects\\seleniumcsharp\\seleniumcsharpproject\\seleniumcsharpproject\\seleniumcsharpproject.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{E518340A-0115-3AA5-FA83-40C802C9BA83}|SeleniumCSharpProject\\SeleniumCSharpProject.csproj|solutionrelative:seleniumcsharpproject\\seleniumcsharpproject.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E518340A-0115-3AA5-FA83-40C802C9BA83}|SeleniumCSharpProject\\SeleniumCSharpProject.csproj|d:\\projects\\seleniumcsharp\\seleniumcsharpproject\\seleniumcsharpproject\\testdataintg.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{E518340A-0115-3AA5-FA83-40C802C9BA83}|SeleniumCSharpProject\\SeleniumCSharpProject.csproj|solutionrelative:seleniumcsharpproject\\testdataintg.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E518340A-0115-3AA5-FA83-40C802C9BA83}|SeleniumCSharpProject\\SeleniumCSharpProject.csproj|d:\\projects\\seleniumcsharp\\seleniumcsharpproject\\seleniumcsharpproject\\appsettings.json||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{E518340A-0115-3AA5-FA83-40C802C9BA83}|SeleniumCSharpProject\\SeleniumCSharpProject.csproj|solutionrelative:seleniumcsharpproject\\appsettings.json||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E518340A-0115-3AA5-FA83-40C802C9BA83}|SeleniumCSharpProject\\SeleniumCSharpProject.csproj|d:\\projects\\seleniumcsharp\\seleniumcsharpproject\\seleniumcsharpproject\\utilities\\baseconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E518340A-0115-3AA5-FA83-40C802C9BA83}|SeleniumCSharpProject\\SeleniumCSharpProject.csproj|solutionrelative:seleniumcsharpproject\\utilities\\baseconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E518340A-0115-3AA5-FA83-40C802C9BA83}|SeleniumCSharpProject\\SeleniumCSharpProject.csproj|d:\\projects\\seleniumcsharp\\seleniumcsharpproject\\seleniumcsharpproject\\testdataprod.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{E518340A-0115-3AA5-FA83-40C802C9BA83}|SeleniumCSharpProject\\SeleniumCSharpProject.csproj|solutionrelative:seleniumcsharpproject\\testdataprod.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E518340A-0115-3AA5-FA83-40C802C9BA83}|SeleniumCSharpProject\\SeleniumCSharpProject.csproj|d:\\projects\\seleniumcsharp\\seleniumcsharpproject\\seleniumcsharpproject\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{E518340A-0115-3AA5-FA83-40C802C9BA83}|SeleniumCSharpProject\\SeleniumCSharpProject.csproj|solutionrelative:seleniumcsharpproject\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Base.cs",
+              "DocumentMoniker": "D:\\Projects\\SeleniumCSharp\\SeleniumCSharpProject\\SeleniumCSharpProject\\utilities\\Base.cs",
+              "RelativeDocumentMoniker": "SeleniumCSharpProject\\utilities\\Base.cs",
+              "ToolTip": "D:\\Projects\\SeleniumCSharp\\SeleniumCSharpProject\\SeleniumCSharpProject\\utilities\\Base.cs",
+              "RelativeToolTip": "SeleniumCSharpProject\\utilities\\Base.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAxwGIAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-19T07:30:09.905Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Utils.cs",
+              "DocumentMoniker": "D:\\Projects\\SeleniumCSharp\\SeleniumCSharpProject\\SeleniumCSharpProject\\utilities\\Utils.cs",
+              "RelativeDocumentMoniker": "SeleniumCSharpProject\\utilities\\Utils.cs",
+              "ToolTip": "D:\\Projects\\SeleniumCSharp\\SeleniumCSharpProject\\SeleniumCSharpProject\\utilities\\Utils.cs",
+              "RelativeToolTip": "SeleniumCSharpProject\\utilities\\Utils.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAACwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-20T10:17:39.543Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "NUnitTestItem1.cs",
+              "DocumentMoniker": "D:\\Projects\\SeleniumCSharp\\SeleniumCSharpProject\\SeleniumCSharpProject\\NUnitTestItem1.cs",
+              "RelativeDocumentMoniker": "SeleniumCSharpProject\\NUnitTestItem1.cs",
+              "ToolTip": "D:\\Projects\\SeleniumCSharp\\SeleniumCSharpProject\\SeleniumCSharpProject\\NUnitTestItem1.cs",
+              "RelativeToolTip": "SeleniumCSharpProject\\NUnitTestItem1.cs",
+              "ViewState": "AgIAACkBAAAAAAAAAAAjwDMBAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-16T14:16:18.852Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Test1.cs",
+              "DocumentMoniker": "D:\\Projects\\SeleniumCSharp\\SeleniumCSharpProject\\SeleniumCSharpProject\\Test1.cs",
+              "RelativeDocumentMoniker": "SeleniumCSharpProject\\Test1.cs",
+              "ToolTip": "D:\\Projects\\SeleniumCSharp\\SeleniumCSharpProject\\SeleniumCSharpProject\\Test1.cs",
+              "RelativeToolTip": "SeleniumCSharpProject\\Test1.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAAABAAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-19T07:24:54.181Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "TestConfig.cs",
+              "DocumentMoniker": "D:\\Projects\\SeleniumCSharp\\SeleniumCSharpProject\\SeleniumCSharpProject\\utilities\\TestConfig.cs",
+              "RelativeDocumentMoniker": "SeleniumCSharpProject\\utilities\\TestConfig.cs",
+              "ToolTip": "D:\\Projects\\SeleniumCSharp\\SeleniumCSharpProject\\SeleniumCSharpProject\\utilities\\TestConfig.cs",
+              "RelativeToolTip": "SeleniumCSharpProject\\utilities\\TestConfig.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-20T08:49:33.511Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "TestDataPROD.json",
+              "DocumentMoniker": "D:\\Projects\\SeleniumCSharp\\SeleniumCSharpProject\\SeleniumCSharpProject\\TestDataPROD.json",
+              "RelativeDocumentMoniker": "SeleniumCSharpProject\\TestDataPROD.json",
+              "ToolTip": "D:\\Projects\\SeleniumCSharp\\SeleniumCSharpProject\\SeleniumCSharpProject\\TestDataPROD.json",
+              "RelativeToolTip": "SeleniumCSharpProject\\TestDataPROD.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-11-20T09:50:28.305Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "BaseConfig.cs",
+              "DocumentMoniker": "D:\\Projects\\SeleniumCSharp\\SeleniumCSharpProject\\SeleniumCSharpProject\\utilities\\BaseConfig.cs",
+              "RelativeDocumentMoniker": "SeleniumCSharpProject\\utilities\\BaseConfig.cs",
+              "ToolTip": "D:\\Projects\\SeleniumCSharp\\SeleniumCSharpProject\\SeleniumCSharpProject\\utilities\\BaseConfig.cs",
+              "RelativeToolTip": "SeleniumCSharpProject\\utilities\\BaseConfig.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-20T08:45:27.119Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\Projects\\SeleniumCSharp\\SeleniumCSharpProject\\SeleniumCSharpProject\\appsettings.json",
+              "RelativeDocumentMoniker": "SeleniumCSharpProject\\appsettings.json",
+              "ToolTip": "D:\\Projects\\SeleniumCSharp\\SeleniumCSharpProject\\SeleniumCSharpProject\\appsettings.json",
+              "RelativeToolTip": "SeleniumCSharpProject\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-11-19T10:17:59.062Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\Projects\\SeleniumCSharp\\SeleniumCSharpProject\\SeleniumCSharpProject\\appsettings.json",
+              "RelativeDocumentMoniker": "SeleniumCSharpProject\\appsettings.json",
+              "ToolTip": "D:\\Projects\\SeleniumCSharp\\SeleniumCSharpProject\\SeleniumCSharpProject\\appsettings.json",
+              "RelativeToolTip": "SeleniumCSharpProject\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-11-20T10:00:37.537Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "SeleniumCSharpProject.csproj",
+              "DocumentMoniker": "D:\\Projects\\SeleniumCSharp\\SeleniumCSharpProject\\SeleniumCSharpProject\\SeleniumCSharpProject.csproj",
+              "RelativeDocumentMoniker": "SeleniumCSharpProject\\SeleniumCSharpProject.csproj",
+              "ToolTip": "D:\\Projects\\SeleniumCSharp\\SeleniumCSharpProject\\SeleniumCSharpProject\\SeleniumCSharpProject.csproj",
+              "RelativeToolTip": "SeleniumCSharpProject\\SeleniumCSharpProject.csproj",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAmwAcAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-11-19T10:00:46.844Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "TestDataINTG.json",
+              "DocumentMoniker": "D:\\Projects\\SeleniumCSharp\\SeleniumCSharpProject\\SeleniumCSharpProject\\TestDataINTG.json",
+              "RelativeDocumentMoniker": "SeleniumCSharpProject\\TestDataINTG.json",
+              "ToolTip": "D:\\Projects\\SeleniumCSharp\\SeleniumCSharpProject\\SeleniumCSharpProject\\TestDataINTG.json",
+              "RelativeToolTip": "SeleniumCSharpProject\\TestDataINTG.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-11-20T08:50:06.569Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

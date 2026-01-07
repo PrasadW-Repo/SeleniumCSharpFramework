@@ -1,0 +1,57 @@
+﻿using AventStack.ExtentReports;
+using AventStack.ExtentReports.Listener.Entity;
+using AventStack.ExtentReports.Model;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Runtime.InteropServices.JavaScript;
+using System.Text;
+using System.Text.Json.Nodes;
+
+namespace SeleniumCSharpProject.utilities 
+{
+    public class Utils
+
+    {      
+        // Reads a JSON file from disk and returns it as a JObject.     
+        public static JObject ReadJSON(String fileName)
+        {
+            try
+            {
+                // Read the file contents
+                var json = File.ReadAllText(fileName);
+
+                // Deserialize into a JObject
+                JObject obj = JsonConvert.DeserializeObject(json) as JObject ?? throw new NullReferenceException($"Not able to deserialze {fileName} file"); 
+
+                return obj;
+            }
+            catch (Exception ex)
+            {
+                throw new InvalidOperationException($"Failed to read or parse JSON file '{fileName}'.", ex);
+            }
+        }
+
+        public static void WaitForElementToAppear(By element, int time)
+        {
+
+           // WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(time));
+
+        }
+
+        public static Media takeScreenshot(IWebDriver driver, string filename)
+        {
+            ITakesScreenshot ts = (ITakesScreenshot)driver;
+            ts.GetScreenshot().SaveAsFile(filename);
+            return MediaEntityBuilder.CreateScreenCaptureFromPath(filename).Build();
+
+        }
+
+    }
+
+    
+}
