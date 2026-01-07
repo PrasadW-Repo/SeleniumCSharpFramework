@@ -7,11 +7,27 @@ trigger:
 - main
 
 pool:
-  vmImage: ubuntu-latest
+  vmImage: windows-latest
 
 steps:
+
+
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
+- task: UseDotNet@2
+  inputs:
+    packageType: 'sdk'
+    version: '3.1x'
+- task: CmdLine@2
+  inputs:
+    script: 'echo taskkill /f /im chromedriver.exe'
+
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'restore'
+    projects: '**/*.sln'
+    feedsToUse: 'select'
+
 
 - script: |
     echo Add other tasks to build, test, and deploy your project.
