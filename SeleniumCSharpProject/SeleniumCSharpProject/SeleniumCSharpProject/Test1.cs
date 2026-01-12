@@ -13,7 +13,7 @@ public class Test1 : Base
     [Test]
     public void TestCase1()
     {
-        Driver.Url = Base.Config.url;
+       Driver.Url = Base.Config.url;
        test.Log(Status.Fail,$"Entered url {Base.Config.url}");
        
     }
