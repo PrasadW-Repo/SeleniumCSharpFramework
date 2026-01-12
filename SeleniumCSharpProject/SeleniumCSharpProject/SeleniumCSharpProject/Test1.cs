@@ -16,6 +16,7 @@ public class Test1 : Base
        Driver.Url = Base.Config.url;
        test.Log(Status.Fail,$"Entered url {Base.Config.url}");
        
+
     }
 
 
